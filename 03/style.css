@@ -1,0 +1,10 @@
+button {
+  cursor: pointer;
+}
+.reset-btn.hidden {
+  display: none;
+}
+.used-space__display {
+  display: flex;
+  gap: 1.5rem;
+}
