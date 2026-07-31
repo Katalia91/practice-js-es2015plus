@@ -26,21 +26,6 @@ const calculateUsedSpace = () => {
     const { name, size } = file;
     const { length, unit = "B" } = size;
     const sizeInMB = convertToMB(length, unit);
-
-    // let sizeInMB;
-
-    // if (unit === "B") {
-    //   sizeInMB = length * 0.00000095;
-    // }
-    // if (unit === "KB") {
-    //   sizeInMB = length * 0.00097656;
-    // }
-    // if (unit === "MB") {
-    //   sizeInMB = length;
-    // }
-    // if (unit === "GB") {
-    //   sizeInMB = length * 1024;
-    // }
     spaceUsed += sizeInMB;
   });
   usedSpaceDisplay.innerText = `Total used space: ${spaceUsed.toFixed(2)} MB`;
