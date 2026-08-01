@@ -4,7 +4,8 @@ const calculateBtn = document.querySelector(".calculate-btn");
 const usedSpaceDisplay = document.querySelector(".used-space");
 const resetBtn = document.querySelector(".reset-btn");
 
-const convertToMB = (length, unit) => {
+const convertToMB = (size) => {
+  const { length, unit = "B" } = size;
   let sizeInMB;
   if (unit === "B") {
     sizeInMB = length * 0.00000095;
@@ -24,8 +25,7 @@ const calculateUsedSpace = () => {
   let spaceUsed = 0;
   files.forEach((file) => {
     const { name, size } = file;
-    const { length, unit = "B" } = size;
-    const sizeInMB = convertToMB(length, unit);
+    const sizeInMB = convertToMB(size);
     spaceUsed += sizeInMB;
   });
   usedSpaceDisplay.innerText = `Total used space: ${spaceUsed.toFixed(2)} MB`;
