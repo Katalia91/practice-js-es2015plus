@@ -32,8 +32,6 @@ const calculateUsedSpace = () => {
   resetBtn.classList.remove("hidden");
 };
 
-const formatUnits = () => {};
-
 const resetDisplay = () => {
   usedSpaceDisplay.innerText = "";
   resetBtn.classList.add("hidden");
